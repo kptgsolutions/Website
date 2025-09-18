@@ -3,26 +3,204 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Website</title>
+  <title>KPT General Solutions — SDVOSB Procurement</title>
+  <meta name="description" content=\"Veteran‑led procurement for defense and civilian agencies. Fast sourcing and on-time delivery. SDVOSB.\" />
+  <meta name="theme-color" content="#0b3b6f"/>
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="KPT General Solutions"/>
+  <meta property="og:description" content=\"Veteran‑led procurement. Rapid, responsive results.\"/>
+  
+  <meta name="twitter:card" content="summary_large_image"/>
+  <!-- Fonts: system stack for speed; no external calls -->
   <style>
-    :root { --bg:#0b0f14; --fg:#e8edf2; --muted:#9fb3c8; }
-    html,body{height:100%} body{
-      margin:0; background:var(--bg); color:var(--fg);
-      font-family: "Georgia", "Times New Roman", serif;
-      display:grid; place-items:center; text-align:center;
+    :root{
+      --ink:#0b1220;          /* primary text */
+      --brand:#0b3b6f;        /* brand navy */
+      --brand-2:#154c88;      /* deeper accent */
+      --bg:#ffffff;           /* page */
+      --muted:#5b6779;        /* gray text */
+      --edge:#e6ebf2;         /* dividers */
+      --success:#1a9b64;      /* green */
+      --cta:#0d6efd;          /* button blue */
     }
-    .card{
-      padding:40px 48px; border:1px solid rgba(255,255,255,.12);
-      border-radius:18px; background:rgba(255,255,255,.03);
-      box-shadow:0 10px 30px rgba(0,0,0,.35); max-width:720px;
-    }
-    h1{font-size:clamp(36px, 6vw, 72px); margin:0 0 10px; line-height:1.05;}
-    p{margin:0; color:var(--muted); font-size:clamp(14px,1.6vw,18px);}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial}
+    img{max-width:100%;height:auto}
+    a{color:var(--cta);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1120px,92%);margin:0 auto}
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip:focus{left:12px;top:12px;width:auto;height:auto;background:#fff;border:2px solid var(--cta);padding:.4rem .6rem;z-index:1000}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--edge)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .brand{display:inline-flex;align-items:center;gap:.9rem;color:inherit;text-decoration:none}
+    .mark{height:56px;width:56px}
+    .wordmark{line-height:1}
+    .wordmark .kpt{font-weight:800;letter-spacing:.3px;font-size:1.25rem}
+    .wordmark .sub{font-size:.95rem;color:var(--muted)}
+    nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+    nav a{color:#1b2430;padding:.45rem .6rem;border-radius:.5rem}
+    nav a:hover{background:#f6f9ff}
+    .cta{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .9rem;background:var(--cta);color:#fff;border-radius:.5rem;border:1px solid rgba(0,0,0,.06);font-weight:700}
+
+    /* Hero */
+    .hero{padding:96px 0 44px;text-align:center;border-bottom:1px solid var(--edge)}
+    .hero h1{font-size:clamp(2.4rem,1.2rem + 4.5vw,4rem);line-height:1.1;margin:0 0 .6rem;letter-spacing:.2px;font-weight:900}
+    .lead{max-width:70ch;margin:0 auto 1rem;color:#1f2a37}
+    .sdvosb{display:inline-block;margin-top:.35rem;color:var(--muted);font-size:.95rem}
+    .btnrow{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.1rem}
+    .btn{background:var(--cta);color:#fff;padding:.68rem 1rem;border-radius:.55rem;border:1px solid rgba(0,0,0,.06);font-weight:700}
+    .btn.secondary{background:#fff;color:var(--brand);border:1px solid var(--edge)}
+    .chips{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:14px;color:#445269;font-size:.85rem}
+    .chip{border:1px solid var(--edge);border-radius:999px;padding:.28rem .7rem;background:#fff}
+
+    /* Sections */
+    section{padding:56px 0}
+    h2{margin:0 0 .75rem;font-size:clamp(1.3rem,1.05rem + 1vw,1.8rem)}
+    .muted{color:var(--muted)}
+
+    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .card{grid-column:span 12;border:1px solid var(--edge);border-radius:14px;padding:1.1rem;background:#fff}
+    .card h3{margin:.2rem 0 .35rem}
+    @media(min-width:760px){.card{grid-column:span 4}}
+
+    /* Process */
+    .flow{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:.5rem}
+    .flow-item{grid-column:span 12;background:#fbfdff;border:1px solid var(--edge);border-radius:14px;padding:1rem;position:relative}
+    @media(min-width:760px){.flow-item{grid-column:span 4}}
+    .flow-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;background:var(--brand);color:#fff;font-weight:800;margin-bottom:.4rem}
+    .flow-title{font-weight:700;margin:.2rem 0 .25rem}
+    @media(min-width:760px){.step{grid-column:span 4}}
+
+    /* Contact */
+    .contactbox{display:grid;gap:.6rem;border:1px solid var(--edge);border-radius:12px;padding:1rem;background:#fafbfe}
+
+    /* Footer */
+    footer{border-top:1px solid var(--edge);padding:28px 0 60px;color:var(--muted);font-size:.92rem}
+    .footgrid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:760px){.footgrid{grid-template-columns:1fr auto;align-items:center}}
   </style>
+  
 </head>
 <body>
-  <div class="card">
-    <h1>Josh sucks ass.</h1>
-  </div>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a class="brand" href="#" aria-label="KPT General Solutions home">
+        <!-- Two-chevron mark -->
+        <svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#8dd3ff"/>
+              <stop offset="1" stop-color="#cde6ff"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 18 L28 32 L12 46" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M30 18 L46 32 L30 46" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="wordmark">
+          <span class="kpt">KPT</span>
+          <span class="sub">General Solutions</span>
+        </span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="cta" href="#contact">Start a request</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="h1">
+      <div class="container">
+        <h1 id="h1">Veteran‑led procurement. Rapid, responsive results.</h1>
+        <p class="lead">Fast sourcing and on‑time delivery for defense and civilian agencies.</p>
+        <div class="sdvosb">Service‑Disabled Veteran‑Owned Small Business (SDVOSB)</div>
+        <div class="btnrow" role="group" aria-label="Primary calls to action">
+          <a class="btn" href="mailto:ops@kptgsolutions.com?subject=New%20Procurement%20Request&body=Agency:%0AItems:%0ARequired%20by:%0AContact:%0A">Email a request</a>
+          <a class="btn secondary" href="#capabilities">View capabilities</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- KO QUICK FACTS / TRUST STRIP -->
+
+    <!-- CAPABILITIES (ESSENTIALS ONLY) -->
+    <section id="capabilities" aria-labelledby="cap">
+      <div class="container">
+        <h2 id="cap">Capabilities</h2>
+        <p class="muted">Essential procurement services focused on speed, accuracy, and compliance.</p>
+        <div class="cards">
+          <article class="card" aria-label="Rapid Sourcing & Procurement">
+            <h3>Rapid Sourcing & Procurement</h3>
+            <p class="muted">Hard‑to‑find parts, multi‑line POs, quote turnaround in hours, clear ETAs.</p>
+          </article>
+          <article class="card" aria-label="Fulfillment & Distribution">
+            <h3>Fulfillment & Distribution</h3>
+            <p class="muted">Consolidation, packaging, labeling, and shipment coordination aligned to program milestones.</p>
+          </article>
+          <article class="card" aria-label="Compliance & Traceability">
+            <h3>Documentation & Tracking<\/h3>
+            <p class=\"muted\">Clear status updates, shipment tracking, and delivery records so teams always know where things stand.<\/p>
+          <\/article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS (3 STEPS) -->
+    <section id="process" aria-labelledby="proc">
+      <div class="container">
+        <h2 id="proc">From request to delivery</h2>
+        <div class="flow">
+          <div class="flow-item">
+            <div class="flow-num">1</div>
+            <div class="flow-title">Request</div>
+            <p class="muted">Send part numbers, quantities, needed‑by date. Same‑day scope confirm.</p>
+          </div>
+          <div class="flow-item">
+            <div class="flow-num">2</div>
+            <div class="flow-title">Quote</div>
+            <p class="muted">Clear pricing and ETAs—typically within hours.</p>
+          </div>
+          <div class="flow-item">
+            <div class="flow-num">3</div>
+            <div class="flow-title">Delivery</div>
+            <p class="muted">Tracked shipment and delivery confirmation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAST PERFORMANCE (ANONYMIZED) -->
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="con">
+      <div class="container">
+        <h2 id="con">Contact</h2>
+        <div class="contactbox">
+          <div><strong>Email:</strong> <a href="mailto:ops@kptgsolutions.com">ops@kptgsolutions.com</a></div>
+          <div><strong>Location:</strong> Maryland, USA</div>
+          <div class="muted">Prefer a template? <a href="mailto:ops@kptgsolutions.com?subject=New%20Procurement%20Request&body=Agency:%0AItems:%0ARequired%20by:%0ABilling%20terms:%0AContact:%0A">Use this pre‑filled email</a>.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footgrid">
+      <div>© <span id="y"></span> KPT General Solutions. All rights reserved.</div>
+      <div>SDVOSB • Veteran‑led • Defense & Civilian</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
