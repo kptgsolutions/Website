@@ -3,104 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Company — Simple, Fast Starter Site</title>
-  <meta name="description" content="A clean, responsive starter website you can deploy to GitHub Pages and connect to your Porkbun domain in minutes." />
-  <meta property="og:title" content="Your Company — Simple, Fast Starter Site" />
-  <meta property="og:description" content="Clean, responsive starter website template." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0ea5e9" />
+  <title>Statement</title>
   <style>
-    :root{
-      --bg: #0b0f14;
-      --panel: #0f172a;
-      --text: #e5eef8;
-      --muted: #9fb3c8;
-      --brand: #0ea5e9; /* cyan-500 */
-      --brand-2: #22d3ee; /* cyan-400 */
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    :root { --bg:#0b0f14; --fg:#e8edf2; --muted:#9fb3c8; }
+    html,body{height:100%} body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family: "Georgia", "Times New Roman", serif;
+      display:grid; place-items:center; text-align:center;
     }
-    * { box-sizing: border-box; }
-    html, body { margin:0; padding:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: radial-gradient(1200px 800px at 75% -10%, rgba(34,211,238,.08), transparent 60%), var(--bg); }
-    a { color: var(--brand-2); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { width: min(1100px, 92vw); margin: 0 auto; }
-    header { position: sticky; top:0; backdrop-filter: blur(8px); background: rgba(11,15,20,.6); border-bottom: 1px solid rgba(255,255,255,.06); z-index: 20; }
-    .nav { display:flex; align-items:center; justify-content:space-between; padding: 14px 0; }
-    .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px; }
-    .logo { width:34px; height:34px; border-radius:10px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow); }
-    .cta { display:inline-block; padding:10px 16px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:#001018; font-weight:700; border-radius:10px; box-shadow: var(--shadow); border: none; }
-    .cta:hover { filter: brightness(1.05); }
-
-    .hero { display:grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items:center; padding: 48px 0 28px; }
-    .hero h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.05; margin: 0 0 12px; }
-    .sub { color: var(--muted); font-size: clamp(15px, 1.7vw, 18px); margin-bottom: 22px; }
-    .panel { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
-
-    .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 32px 0; }
-    .card { background: var(--panel); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
-    .card h3 { margin: 0 0 6px; font-size: 18px; }
-    .muted { color: var(--muted); }
-
-    .steps { margin: 14px 0 6px; display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
-    .step { background: linear-gradient(180deg, rgba(14,165,233,.12), rgba(14,165,233,.06)); border:1px solid rgba(14,165,233,.35); border-radius: var(--radius); padding: 14px; }
-    .step b { font-size: 13px; display:inline-block; background: rgba(14,165,233,.25); color:#001018; padding: 4px 8px; border-radius: 999px; margin-bottom: 8px; }
-
-    .footer { margin: 36px 0 50px; color: var(--muted); font-size: 14px; text-align:center; }
-
-    /* Responsive */
-    @media (max-width: 840px){
-      .hero { grid-template-columns: 1fr; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr; }
+    .card{
+      padding:40px 48px; border:1px solid rgba(255,255,255,.12);
+      border-radius:18px; background:rgba(255,255,255,.03);
+      box-shadow:0 10px 30px rgba(0,0,0,.35); max-width:720px;
     }
+    h1{font-size:clamp(36px, 6vw, 72px); margin:0 0 10px; line-height:1.05;}
+    p{margin:0; color:var(--muted); font-size:clamp(14px,1.6vw,18px);}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo"></div>
-        <span>Your Company</span>
-      </div>
-      <a class="cta" href="#contact">Get in touch</a>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <div>
-        <h1>We build tiny things that do big work.</h1>
-        <p class="sub">Clean, fast starter site you can deploy in minutes. Swap the text, tweak colors, and you’re live with a custom domain.</p>
-        <a class="cta" href="#contact">Contact us</a>
-      </div>
-      <div class="panel">
-        <p class="muted" style="margin-top:0">Quick facts</p>
-        <div class="grid-3">
-          <div class="card"><h3>Fast</h3><p class="muted">Static site — loads instantly from a CDN.</p></div>
-          <div class="card"><h3>Secure</h3><p class="muted">No backend by default; easy to harden.</p></div>
-          <div class="card"><h3>Flexible</h3><p class="muted">Pure HTML/CSS/JS — host anywhere.</p></div>
-        </div>
-        <div class="steps">
-          <div class="step"><b>01</b><div><strong>Code</strong><br><span class="muted">Edit this file (index.html).</span></div></div>
-          <div class="step"><b>02</b><div><strong>Deploy</strong><br><span class="muted">Push to GitHub Pages / Netlify.</span></div></div>
-          <div class="step"><b>03</b><div><strong>Connect</strong><br><span class="muted">Point Porkbun DNS to host.</span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="panel">
-      <h2 style="margin-top:0">Contact</h2>
-      <p class="muted">Replace this with your real info.</p>
-      <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
-    </section>
-
-    <p class="footer">© <span id="y"></span> Your Company. Built with ♥.</p>
-  </main>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <div class="card">
+    <h1>Josh sucks ass.</h1>
+    <p>— with love, from the internet</p>
+  </div>
 </body>
 </html>
