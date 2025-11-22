@@ -8,12 +8,12 @@
   <meta name="theme-color" content="#0b3b6f" />
   <style>
     :root{
-      --ink:#0b1220;          /* text */
-      --brand:#0b3b6f;        /* brand navy */
-      --cta:#0d6efd;          /* button blue */
-      --bg:#ffffff;           /* page */
-      --muted:#5b6779;        /* gray text */
-      --edge:#e6ebf2;         /* dividers */
+      --ink:#0b1220;
+      --brand:#0b3b6f;
+      --cta:#0d6efd;
+      --bg:#ffffff;
+      --muted:#5b6779;
+      --edge:#e6ebf2;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial}
@@ -24,22 +24,28 @@
 
     /* Header */
     header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--edge)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:.75rem}
+    .nav{display:flex;align-items:center;gap:.75rem;padding:1rem 0}
     .brand{display:inline-flex;align-items:center;gap:.9rem;color:inherit;text-decoration:none}
     .mark{height:56px;width:56px}
     .wordmark{line-height:1}
     .wordmark .kpt{font-weight:800;letter-spacing:.3px;font-size:1.25rem}
     .wordmark .sub{font-size:.95rem;color:var(--muted)}
-    nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0;align-items:center;flex-wrap:nowrap}
+    nav{margin-left:auto;margin-right:1rem}
+    nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0;align-items:center}
     nav a{color:#1b2430;padding:.45rem .6rem;border-radius:.5rem;display:block}
     nav a:hover{background:#f6f9ff}
     .cta{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .9rem;background:var(--cta);color:#fff;border-radius:.5rem;border:1px solid rgba(0,0,0,.06);font-weight:700}
+    .seal-right{display:inline-flex;align-items:center}
+    .seal-right .seal{max-height:48px;width:auto;display:block}
 
     /* Mobile header layout (no JS) */
     @media (max-width: 720px){
       .nav{flex-direction:column;align-items:flex-start;padding:.75rem 0}
+      nav{margin:0 0 .25rem 0}
       nav ul{gap:.25rem;flex-wrap:wrap}
       .cta{margin-top:.25rem}
+      .seal-right{align-self:flex-end;margin-top:.25rem}
+      .seal-right .seal{max-height:40px}
     }
 
     /* Hero */
@@ -50,12 +56,9 @@
     .btnrow{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.1rem}
     .btn{background:var(--cta);color:#fff;padding:.68rem 1rem;border-radius:.55rem;border:1px solid rgba(0,0,0,.06);font-weight:700}
     .btn.secondary{background:#fff;color:var(--brand);border:1px solid var(--edge)}
-    .sdvosb-seal{margin-top:12px}
-    .sdvosb-seal .seal{max-height:56px;width:auto;display:inline-block}
     @media (max-width: 560px){
       .btnrow{flex-direction:column;align-items:stretch}
       .btn,.btn.secondary{width:100%}
-      .sdvosb-seal .seal{max-height:44px}
     }
 
     /* Sections */
@@ -86,8 +89,8 @@
 <body>
   <header>
     <div class="container nav" role="navigation" aria-label="Primary">
+      <!-- Left: Brand -->
       <a class="brand" href="#" aria-label="KPT General Solutions home">
-        <!-- Two-chevron mark -->
         <svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
@@ -104,6 +107,7 @@
         </span>
       </a>
 
+      <!-- Middle: Nav -->
       <nav id="primary-nav">
         <ul>
           <li><a href="#capabilities">Capabilities</a></li>
@@ -112,6 +116,11 @@
           <li><a class="cta" href="#contact">Start a request</a></li>
         </ul>
       </nav>
+
+      <!-- Right: SDVOSB seal (put sdvosb-seal.png next to index.html) -->
+      <div class="seal-right">
+        <img class="seal" src="sdvosb-seal.png" alt="SDVOSB seal" />
+      </div>
     </div>
   </header>
 
@@ -125,10 +134,6 @@
         <div class="btnrow" role="group" aria-label="Primary calls to action">
           <a class="btn" href="mailto:kptgsolutions@gmail.com?subject=New%20Lab%20%2F%20Cleanroom%20Request&body=Agency%2FOrg:%0AItems%20%28SKUs%2FPNs%29:%0AQuantities:%0ANeeded%20by:%0AShipping%20address:%0AContact:%0A">Email a request</a>
           <a class="btn secondary" href="#capabilities">View capabilities</a>
-        </div>
-        <!-- SDVOSB seal (optional image). Place sdvosb-seal.png next to index.html -->
-        <div class="sdvosb-seal">
-          <img class="seal" src="sdvosb-seal.png" alt="Service-Disabled Veteran-Owned Small Business seal" />
         </div>
       </div>
     </section>
@@ -199,7 +204,6 @@
   </footer>
 
   <script>
-    // Year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
