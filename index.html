@@ -6,371 +6,111 @@
   <title>KPT General Solutions — SDVOSB Procurement</title>
   <meta name="description" content="Veteran-led procurement of laboratory and cleanroom equipment and supplies. Fast sourcing and on-time delivery. SDVOSB." />
   <meta name="theme-color" content="#0b3b6f" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="kpt-logo-square.png" />
   <style>
-    :root {
-      --ink: #0b1220;
-      --brand: #0b3b6f;
-      --brand-mid: #1a5fa0;
-      --cta: #1060c8;
-      --cta-hover: #0a4fa8;
-      --bg: #f8fafd;
-      --surface: #ffffff;
-      --muted: #56687e;
-      --edge: #dde5ef;
-      --edge-light: #eef2f8;
-      --accent: #c8943a;
+    :root{
+      --ink:#0b1220;
+      --brand:#0b3b6f;
+      --cta:#0d6efd;
+      --bg:#ffffff;
+      --muted:#5b6779;
+      --edge:#e6ebf2;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial}
+    img{max-width:100%;height:auto}
+    a{color:var(--cta);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1200px,92%);margin:0 auto}
+
+    /* Header (larger) */
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--edge)}
+    .nav{display:flex;align-items:center;gap:1.25rem;padding:1.4rem 0}
+    .brand{display:inline-flex;align-items:center;color:inherit;text-decoration:none;flex-shrink:0}
+    .logo-img{display:block;height:76px;width:auto;max-width:320px;object-fit:contain}
+    nav{margin-left:auto;margin-right:1.25rem}
+    nav ul{list-style:none;display:flex;gap:1.15rem;margin:0;padding:0;align-items:center}
+    nav a{color:#1b2430;padding:.55rem .75rem;border-radius:.6rem;display:block;font-size:1.05rem}
+    nav a:hover{background:#f6f9ff}
+    .cta{display:inline-flex;align-items:center;gap:.55rem;padding:.7rem 1rem;background:var(--cta);color:#fff;border-radius:.6rem;border:1px solid rgba(0,0,0,.06);font-weight:800;font-size:1.05rem}
+    .seal-right{display:inline-flex;align-items:center}
+    .seal-right .seal{max-height:64px;width:auto;display:block}
+
+    /* Mobile header (no JS) */
+    @media (max-width: 760px){
+      .container{width:92%}
+      .nav{flex-direction:column;align-items:flex-start;padding:1rem 0 .85rem}
+      nav{margin:0 0 .35rem 0}
+      nav ul{gap:.35rem;flex-wrap:wrap}
+      .seal-right{align-self:flex-end;margin-top:.25rem}
+      .seal-right .seal{max-height:56px}
+      .logo-img{height:68px;max-width:280px}
     }
 
-    *, *::before, *::after { box-sizing: border-box; }
+    /* Hero */
+    .hero{padding:96px 0 44px;text-align:center;border-bottom:1px solid var(--edge)}
+    .hero h1{font-size:clamp(2.3rem,1.2rem + 4.5vw,4rem);line-height:1.12;margin:0 0 .6rem;letter-spacing:.2px;font-weight:900}
+    .lead{max-width:68ch;margin:0 auto 0.75rem;color:#1f2a37}
+    .sdvosb{display:inline-block;margin-top:.35rem;color:var(--muted);font-size:1rem}
 
-    html, body {
-      margin: 0; padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 16px/1.65 'DM Sans', system-ui, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+    /* Sections */
+    section{padding:52px 0}
+    h2{margin:0 0 .9rem;font-size:clamp(1.45rem,1.05rem + 1.1vw,2rem)}
+    .muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+    .card{grid-column:span 12;border:1px solid var(--edge);border-radius:16px;padding:1.2rem;background:#fff}
+    .card h3{margin:.2rem 0 .35rem;font-size:1.1rem}
+    @media(min-width:820px){.card{grid-column:span 4}}
 
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: var(--cta); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    /* Flow */
+    .flow{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:.5rem}
+    .flow-item{grid-column:span 12;background:#fbfdff;border:1px solid var(--edge);border-radius:16px;padding:1.1rem}
+    .flow-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:999px;background:var(--brand);color:#fff;font-weight:800;margin-bottom:.5rem}
+    .flow-title{font-weight:800;margin:.2rem 0 .25rem}
+    @media(min-width:820px){.flow-item{grid-column:span 4}}
 
-    .container { width: min(1160px, 92%); margin: 0 auto; }
+    /* Contact */
+    .contactbox{display:grid;gap:.7rem;border:1px solid var(--edge);border-radius:14px;padding:1.1rem;background:#fafbfe}
 
-    /* ─── Header ─── */
-    header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--edge);
-      box-shadow: 0 1px 0 var(--edge-light);
-    }
-
-    .nav {
-      display: flex; align-items: center;
-      gap: 1.5rem; padding: 1.1rem 0;
-    }
-
-    .brand {
-      display: inline-flex; align-items: center; gap: .9rem;
-      color: inherit; text-decoration: none; flex-shrink: 0;
-    }
-
-    .brand-logo {
-      height: 68px; width: auto;
-      object-fit: contain;
-    }
-
-    .wordmark { line-height: 1.1; }
-    .wordmark .kpt {
-      font-family: 'Libre Baskerville', serif;
-      font-weight: 700; font-size: 1.55rem;
-      letter-spacing: .5px; color: var(--brand);
-      display: block;
-    }
-    .wordmark .sub {
-      font-size: .9rem; color: var(--muted);
-      font-weight: 400; letter-spacing: .2px;
-      display: block;
-    }
-
-    nav { margin-left: auto; margin-right: 1rem; }
-    nav ul {
-      list-style: none; display: flex;
-      gap: .25rem; margin: 0; padding: 0; align-items: center;
-    }
-    nav a {
-      color: #2b3a4d; padding: .5rem .8rem;
-      border-radius: .5rem; display: block;
-      font-size: .95rem; font-weight: 500;
-      transition: background .15s, color .15s;
-    }
-    nav a:hover { background: #eef4ff; color: var(--brand); text-decoration: none; }
-
-    .cta-btn {
-      display: inline-flex; align-items: center; gap: .45rem;
-      padding: .58rem 1.15rem;
-      background: var(--cta); color: #fff;
-      border-radius: .55rem;
-      border: 1px solid rgba(0,0,0,.08);
-      font-weight: 700; font-size: .95rem;
-      box-shadow: 0 2px 8px rgba(10,79,168,.22);
-      transition: background .15s, box-shadow .15s, transform .1s;
-      text-decoration: none;
-    }
-    .cta-btn:hover {
-      background: var(--cta-hover); text-decoration: none;
-      box-shadow: 0 4px 14px rgba(10,79,168,.3);
-      transform: translateY(-1px);
-    }
-
-    .seal-right { display: inline-flex; align-items: center; flex-shrink: 0; }
-    .seal-right .seal { max-height: 58px; width: auto; }
-
-    /* ─── Mobile header ─── */
-    @media (max-width: 780px) {
-      .nav { flex-wrap: wrap; padding: .85rem 0 .7rem; gap: .6rem; }
-      .wordmark .kpt { font-size: 1.3rem; }
-      .brand-logo { height: 56px; }
-      nav { margin: 0; order: 3; width: 100%; }
-      nav ul { flex-wrap: wrap; gap: .25rem; }
-      .seal-right { margin-left: auto; }
-      .seal-right .seal { max-height: 50px; }
-    }
-
-    /* ─── Hero ─── */
-    .hero {
-      padding: 100px 0 72px;
-      text-align: center;
-      border-bottom: 1px solid var(--edge);
-      background:
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(11,59,111,.07) 0%, transparent 70%),
-        var(--bg);
-      position: relative; overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 39px, var(--edge-light) 39px, var(--edge-light) 40px),
-        repeating-linear-gradient(90deg, transparent, transparent 39px, var(--edge-light) 39px, var(--edge-light) 40px);
-      opacity: .5; pointer-events: none;
-    }
-
-    .hero .container { position: relative; }
-
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: .8rem; font-weight: 700;
-      letter-spacing: 1.4px; text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.1rem;
-    }
-
-    .hero h1 {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(2.1rem, 1rem + 4.2vw, 3.6rem);
-      line-height: 1.13; margin: 0 0 1rem;
-      font-weight: 700; letter-spacing: -.2px;
-      color: var(--brand);
-    }
-
-    .hero h1 em {
-      font-style: normal;
-      color: var(--ink);
-    }
-
-    .lead {
-      max-width: 60ch; margin: 0 auto .5rem;
-      color: #2b3a4d; font-size: 1.1rem; line-height: 1.7;
-    }
-
-    .hero-badges {
-      margin-top: 1.8rem;
-      display: flex; align-items: center; justify-content: center;
-      gap: .75rem; flex-wrap: wrap;
-    }
-
-    .badge {
-      display: inline-flex; align-items: center; gap: .4rem;
-      padding: .4rem .85rem;
-      border: 1px solid var(--edge);
-      border-radius: 99px;
-      background: var(--surface);
-      font-size: .85rem; color: var(--muted); font-weight: 500;
-      box-shadow: 0 1px 4px rgba(0,0,0,.05);
-    }
-
-    .badge-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--accent); flex-shrink: 0;
-    }
-
-    /* ─── Section base ─── */
-    section { padding: 64px 0; }
-    h2 {
-      font-family: 'Libre Baskerville', serif;
-      margin: 0 0 .5rem;
-      font-size: clamp(1.4rem, .9rem + 1.2vw, 1.95rem);
-      color: var(--brand); font-weight: 700;
-    }
-    .section-lead { color: var(--muted); margin: 0 0 2rem; font-size: 1.05rem; }
-
-    /* ─── Capabilities ─── */
-    #capabilities { background: var(--surface); border-bottom: 1px solid var(--edge); }
-
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
-
-    .card {
-      border: 1px solid var(--edge);
-      border-radius: 14px; padding: 1.5rem;
-      background: var(--bg);
-      transition: box-shadow .2s, transform .2s, border-color .2s;
-    }
-    .card:hover {
-      box-shadow: 0 6px 24px rgba(11,59,111,.1);
-      transform: translateY(-2px);
-      border-color: rgba(11,59,111,.2);
-    }
-
-    .card-icon {
-      width: 40px; height: 40px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: .9rem;
-    }
-    .card-icon svg { width: 20px; height: 20px; color: var(--brand); }
-
-    .card h3 {
-      margin: 0 0 .4rem; font-size: 1.05rem;
-      font-weight: 700; color: var(--ink);
-    }
-    .card p { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.6; }
-
-    @media (max-width: 820px) { .cards { grid-template-columns: 1fr; } }
-
-    /* ─── Process ─── */
-    #process { background: var(--bg); }
-
-    .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
-
-    .flow-item {
-      background: var(--surface);
-      border: 1px solid var(--edge);
-      border-radius: 14px; padding: 1.5rem;
-      position: relative; overflow: hidden;
-    }
-
-    .flow-item::before {
-      content: attr(data-num);
-      position: absolute; right: 1rem; top: .6rem;
-      font-family: 'Libre Baskerville', serif;
-      font-size: 3.5rem; font-weight: 700;
-      color: var(--edge); line-height: 1;
-      pointer-events: none; user-select: none;
-    }
-
-    .flow-num {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 34px; height: 34px; border-radius: 50%;
-      background: var(--brand); color: #fff;
-      font-weight: 800; font-size: .85rem;
-      margin-bottom: .75rem; flex-shrink: 0;
-    }
-
-    .flow-title { font-weight: 700; font-size: 1.05rem; margin: 0 0 .35rem; color: var(--ink); }
-    .flow-item p { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.6; }
-
-    @media (max-width: 820px) { .flow { grid-template-columns: 1fr; } }
-
-    /* ─── Contact ─── */
-    #contact {
-      background: var(--brand);
-      border-top: none;
-    }
-
-    #contact h2 { color: #fff; }
-    #contact .section-lead { color: rgba(255,255,255,.7); }
-
-    .contactbox {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem; margin-top: 1.5rem;
-    }
-
-    .contact-card {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 14px; padding: 1.3rem 1.4rem;
-      display: flex; flex-direction: column; gap: .3rem;
-    }
-
-    .contact-label {
-      font-size: .78rem; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase;
-      color: rgba(255,255,255,.5);
-    }
-
-    .contact-value {
-      font-size: 1rem; color: #fff; font-weight: 500;
-    }
-
-    .contact-value a {
-      color: #93c5fd; font-weight: 500;
-    }
-    .contact-value a:hover { color: #bfdbfe; text-decoration: underline; }
-
-    /* ─── Footer ─── */
-    footer {
-      border-top: 1px solid var(--edge);
-      padding: 24px 0 48px;
-      background: var(--surface);
-      color: var(--muted); font-size: .88rem;
-    }
-
-    .footgrid {
-      display: flex; align-items: center;
-      justify-content: space-between; flex-wrap: wrap; gap: .75rem;
-    }
-
-    .foot-right {
-      display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
-    }
-
-    .foot-pill {
-      display: inline-flex; align-items: center;
-      padding: .3rem .7rem;
-      border: 1px solid var(--edge);
-      border-radius: 99px; font-size: .8rem;
-      background: var(--bg);
-    }
+    /* Footer */
+    footer{border-top:1px solid var(--edge);padding:30px 0 64px;color:var(--muted);font-size:.95rem}
+    .footgrid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:820px){.footgrid{grid-template-columns:1fr auto;align-items:center}}
   </style>
 </head>
 <body>
   <header>
     <div class="container nav" role="navigation" aria-label="Primary">
-
-      <!-- Brand -->
+      <!-- Left: Brand -->
       <a class="brand" href="#" aria-label="KPT General Solutions home">
-        <img class="brand-logo" src="kpt-logo-square.png" alt="KPT General Solutions" />
+        <img class="logo-img" src="kpt-logo-wide.png" alt="KPT General Solutions" />
       </a>
 
-      <!-- Nav -->
+      <!-- Middle: Nav -->
       <nav id="primary-nav">
         <ul>
           <li><a href="#capabilities">Capabilities</a></li>
           <li><a href="#process">How it works</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="cta-btn" href="#contact">Start a request</a></li>
+          <li><a class="cta" href="#contact">Start a request</a></li>
         </ul>
       </nav>
 
-      <!-- SDVOSB seal -->
+      <!-- Right: SDVOSB seal (put sdvosb-seal.png next to index.html) -->
       <div class="seal-right">
-        <img class="seal" src="sdvosb-seal.png" alt="SDVOSB certified" />
+        <img class="seal" src="sdvosb-seal.png" alt="SDVOSB seal" />
       </div>
     </div>
   </header>
 
   <main id="main">
-
     <!-- HERO -->
     <section class="hero" aria-labelledby="h1">
       <div class="container">
-        <div class="hero-eyebrow">Service-Disabled Veteran-Owned Small Business</div>
-        <h1 id="h1">Veteran-led procurement.<br><em>Rapid, responsive results.</em></h1>
-        <p class="lead">Fast sourcing and on-time delivery of laboratory and cleanroom equipment and supplies for defense and civilian agencies.</p>
-        <div class="hero-badges">
-          <span class="badge"><span class="badge-dot"></span>SDVOSB Certified</span>
-          <span class="badge"><span class="badge-dot"></span>Defense &amp; Civilian</span>
-          <span class="badge"><span class="badge-dot"></span>Maryland, USA</span>
-          <span class="badge"><span class="badge-dot"></span>Same-day quotes</span>
-        </div>
+        <h1 id="h1">Veteran-led procurement. Rapid, responsive results.</h1>
+        <p class="lead">Fast sourcing and on-time delivery of laboratory and cleanroom equipment and supplies for <strong>defense</strong> and <strong>civilian</strong> agencies.</p>
+        <div class="sdvosb">Service-Disabled Veteran-Owned Small Business (SDVOSB)</div>
+        <!-- Hero buttons removed -->
       </div>
     </section>
 
@@ -378,68 +118,44 @@
     <section id="capabilities" aria-labelledby="cap">
       <div class="container">
         <h2 id="cap">Capabilities</h2>
-        <p class="section-lead">Essential services for labs and cleanrooms — focused on speed and reliability.</p>
+        <p class="muted">Essential services for labs and cleanrooms—focused on speed and reliability.</p>
         <div class="cards">
-
           <article class="card" aria-label="Rapid Lab Sourcing">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-            </div>
             <h3>Rapid Lab Sourcing</h3>
-            <p>Hard-to-find instruments, components, and spares. Quote turnaround in hours with clear ETAs.</p>
+            <p class="muted">Hard-to-find instruments, components, and spares. Quote turnaround in hours with clear ETAs.</p>
           </article>
-
           <article class="card" aria-label="Cleanroom Supplies & Equipment">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </div>
-            <h3>Cleanroom Supplies &amp; Equipment</h3>
-            <p>Gloves, wipes, swabs, filters, tubing, fittings, benches, hoods, and more — delivered on schedule.</p>
+            <h3>Cleanroom Supplies & Equipment</h3>
+            <p class="muted">Gloves, wipes, swabs, filters, tubing, fittings, benches, hoods, and more—delivered on schedule.</p>
           </article>
-
           <article class="card" aria-label="Documentation & Tracking">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-              </svg>
-            </div>
-            <h3>Documentation &amp; Tracking</h3>
-            <p>Status updates, shipment tracking, and delivery records — so your team always knows where things stand.</p>
+            <h3>Documentation & Tracking</h3>
+            <p class="muted">Status updates, shipment tracking, and delivery records—so teams always know where things stand.</p>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- PROCESS -->
+    <!-- FLOW -->
     <section id="process" aria-labelledby="proc">
       <div class="container">
         <h2 id="proc">From request to delivery</h2>
-        <p class="section-lead">A simple, accountable process — no surprises.</p>
         <div class="flow">
-
-          <div class="flow-item" data-num="1">
+          <div class="flow-item">
             <div class="flow-num">1</div>
             <div class="flow-title">Request</div>
-            <p>Send part numbers, quantities, and your needed-by date. We confirm scope the same day.</p>
+            <p class="muted">Send part numbers, quantities, needed-by date. Same-day scope confirm.</p>
           </div>
-
-          <div class="flow-item" data-num="2">
+          <div class="flow-item">
             <div class="flow-num">2</div>
             <div class="flow-title">Quote</div>
-            <p>Clear pricing and ETAs — typically within hours, never guesswork.</p>
+            <p class="muted">Clear pricing and ETAs—typically within hours.</p>
           </div>
-
-          <div class="flow-item" data-num="3">
+          <div class="flow-item">
             <div class="flow-num">3</div>
             <div class="flow-title">Delivery</div>
-            <p>Tracked shipment and delivery confirmation so nothing falls through the cracks.</p>
+            <p class="muted">Tracked shipment and delivery confirmation.</p>
           </div>
-
         </div>
       </div>
     </section>
@@ -447,37 +163,19 @@
     <!-- CONTACT -->
     <section id="contact" aria-labelledby="con">
       <div class="container">
-        <h2 id="con">Get in touch</h2>
-        <p class="section-lead">Ready to source? Send us your requirements and we'll respond the same day.</p>
+        <h2 id="con">Contact</h2>
         <div class="contactbox">
-          <div class="contact-card">
-            <div class="contact-label">Email</div>
-            <div class="contact-value">
-              <a href="mailto:operations@kptgsolutions.com">operations@kptgsolutions.com</a>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Maryland, USA</div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-label">Response time</div>
-            <div class="contact-value">Same business day</div>
-          </div>
+          <div><strong>Email:</strong> <a href="mailto:operations@kptgsolutions.com">operations@kptgsolutions.com</a></div>
+          <div><strong>Location:</strong> Maryland, USA</div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
     <div class="container footgrid">
       <div>© <span id="y"></span> KPT General Solutions. All rights reserved.</div>
-      <div class="foot-right">
-        <span class="foot-pill">SDVOSB</span>
-        <span class="foot-pill">Veteran-led</span>
-        <span class="foot-pill">Defense &amp; Civilian</span>
-      </div>
+      <div>SDVOSB • Veteran-led • Defense & Civilian</div>
     </div>
   </footer>
 
