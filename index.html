@@ -60,7 +60,7 @@
     }
 
     .brand-logo {
-      height: 100px; width: auto;
+      height: 200px; width: auto;
       object-fit: contain;
     }
 
@@ -108,16 +108,30 @@
     }
 
     .seal-right { display: inline-flex; align-items: center; flex-shrink: 0; }
-    .seal-right .seal { max-height: 100px; width: auto; }
+    .seal-right .seal { max-height: 58px; width: auto; }
 
     /* ─── Mobile header ─── */
     @media (max-width: 780px) {
-      .nav { flex-wrap: wrap; padding: .85rem 0 .7rem; gap: .6rem; }
+      .nav {
+        flex-wrap: wrap;
+        padding: .85rem 0 .7rem;
+        gap: .5rem;
+        align-items: flex-start;
+      }
       .wordmark .kpt { font-size: 1.3rem; }
       .brand-logo { height: 140px; }
-      nav { margin: 0; order: 3; width: 100%; }
-      nav ul { flex-wrap: wrap; gap: .25rem; }
-      .seal-right { margin-left: auto; }
+
+      .brand { order: 1; flex: 1 1 auto; }
+
+      nav { order: 2; margin: 0; flex: 1 1 auto; }
+      nav ul { flex-wrap: wrap; gap: .25rem; align-items: center; }
+
+      .seal-right {
+        order: 2;
+        margin-left: 0;
+        align-self: flex-start;
+        padding-top: .45rem;
+      }
       .seal-right .seal { max-height: 50px; }
     }
 
@@ -337,7 +351,7 @@
 
       <!-- Brand -->
       <a class="brand" href="#" aria-label="KPT General Solutions home">
-        <img class="brand-logo" src="kpt-logo-wide.png" alt="KPT General Solutions" />
+        <img class="brand-logo" src="KPT_Logo.png" alt="KPT General Solutions" />
       </a>
 
       <!-- Nav -->
