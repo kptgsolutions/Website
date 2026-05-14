@@ -121,18 +121,27 @@
       .wordmark .kpt { font-size: 1.3rem; }
       .brand-logo { height: 140px; }
 
-      .brand { order: 1; flex: 1 1 auto; }
+      .brand {
+        order: 1;
+        flex: 1 1 100%;
+      }
 
-      nav { order: 2; margin: 0; flex: 1 1 auto; }
+      nav {
+        order: 2;
+        flex: 1 1 auto;
+        margin: 0;
+      }
       nav ul { flex-wrap: wrap; gap: .25rem; align-items: center; }
 
       .seal-right {
         order: 2;
+        display: inline-flex;
+        align-items: flex-start;
+        flex-shrink: 0;
         margin-left: 0;
-        align-self: flex-start;
-        padding-top: .45rem;
+        padding-top: 2px;
       }
-      .seal-right .seal { max-height: 50px; }
+      .seal-right .seal { max-height: 100px; width: auto; }
     }
 
     /* ─── Hero ─── */
