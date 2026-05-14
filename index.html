@@ -107,6 +107,7 @@
       transform: translateY(-1px);
     }
 
+    /* Desktop seal */
     .seal-right { display: inline-flex; align-items: center; flex-shrink: 0; }
     .seal-right .seal { max-height: 58px; width: auto; }
 
@@ -118,14 +119,17 @@
         gap: .5rem;
         align-items: flex-start;
       }
+
       .wordmark .kpt { font-size: 1.3rem; }
       .brand-logo { height: 140px; }
 
+      /* Row 1: brand logo full width */
       .brand {
         order: 1;
         flex: 1 1 100%;
       }
 
+      /* Row 2: nav links (wraps) + CTA button */
       nav {
         order: 2;
         flex: 1 1 auto;
@@ -133,15 +137,21 @@
       }
       nav ul { flex-wrap: wrap; gap: .25rem; align-items: center; }
 
+      /* Row 2: seal sits in the same flex row as nav,
+         aligned to the bottom so its centre lines up with the CTA button
+         which is the last item in the wrapped nav ul */
       .seal-right {
         order: 2;
-        display: inline-flex;
-        align-items: flex-start;
         flex-shrink: 0;
+        display: inline-flex;
+        align-items: flex-end;
         margin-left: 0;
-        padding-top: 2px;
       }
-      .seal-right .seal { max-height: 100px; width: auto; }
+      .seal-right .seal {
+        height: 100px;
+        width: auto;
+        max-height: none;
+      }
     }
 
     /* ─── Hero ─── */
@@ -377,6 +387,7 @@
       <div class="seal-right">
         <img class="seal" src="sdvosb-seal.png" alt="SDVOSB certified" />
       </div>
+
     </div>
   </header>
 
