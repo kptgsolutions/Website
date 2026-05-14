@@ -110,6 +110,7 @@
     /* Desktop seal */
     .seal-right { display: inline-flex; align-items: center; flex-shrink: 0; }
     .seal-right .seal { max-height: 100px; width: auto; }
+    .mobile-seal { display: none; }
 
     /* ─── Mobile header ─── */
     @media (max-width: 780px) {
@@ -137,20 +138,17 @@
       }
       nav ul { flex-wrap: wrap; gap: .25rem; align-items: center; }
 
-      /* Row 2: seal sits in the same flex row as nav,
-         aligned to the bottom so its centre lines up with the CTA button
-         which is the last item in the wrapped nav ul */
+      /* Move seal inside the nav ul so it sits directly left of the CTA button */
       .seal-right {
-        order: 2;
-        flex-shrink: 0;
-        display: inline-flex;
-        align-items: flex-end;
-        margin-left: 0;
+        display: none;
       }
-      .seal-right .seal {
-        height: 100px;
+      .mobile-seal {
+        display: inline-flex;
+        align-items: center;
+      }
+      .mobile-seal .seal {
+        height: 44px;
         width: auto;
-        max-height: none;
       }
     }
 
@@ -379,11 +377,12 @@
           <li><a href="#capabilities">Capabilities</a></li>
           <li><a href="#process">How it works</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li class="mobile-seal"><img class="seal" src="sdvosb-seal.png" alt="SDVOSB certified" /></li>
           <li><a class="cta-btn" href="#contact">Start a request</a></li>
         </ul>
       </nav>
 
-      <!-- SDVOSB seal -->
+      <!-- SDVOSB seal (desktop only) -->
       <div class="seal-right">
         <img class="seal" src="sdvosb-seal.png" alt="SDVOSB certified" />
       </div>
